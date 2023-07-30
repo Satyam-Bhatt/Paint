@@ -28,7 +28,7 @@ public class LifeActivator : MonoBehaviour
             Destroy(GameObject.Find("MainRoad"));
         }
 
-        if(blackCounter_Up == 13)
+        if(blackCounter_Up == 12)
         {
             pathColor_Up.SetActive(true);
             Destroy(GameObject.Find("Path_Up"));
