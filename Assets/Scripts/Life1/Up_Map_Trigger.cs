@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Life_1_Trigger : MonoBehaviour
+public class Up_Map_Trigger : MonoBehaviour
 {
     private LifeActivator _lifeActivator;
 
@@ -13,13 +13,12 @@ public class Life_1_Trigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "ColorCollision")
+        if (collision.gameObject.tag == "ColorCollision")
         {
             Material material = collision.gameObject.GetComponent<MeshRenderer>().material;
-            if(material.color == Color.black)
+            if (material.color == Color.black)
             {
-                _lifeActivator.blackCounter++;
-                Debug.Log(_lifeActivator.blackCounter);
+                _lifeActivator.blackCounter_Up++;
             }
             Destroy(this.gameObject);
         }
