@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Rotation();
     }
 
     private void FixedUpdate()
