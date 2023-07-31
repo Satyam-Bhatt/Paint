@@ -2296,6 +2296,7 @@ GameObject:
   - component: {fileID: 817327303}
   - component: {fileID: 817327305}
   - component: {fileID: 817327307}
+  - component: {fileID: 817327308}
   m_Layer: 0
   m_Name: Brown
   m_TagString: Untagged
@@ -2382,6 +2383,18 @@ Halo:
     serializedVersion: 2
     rgba: 4287023103
   m_Size: 5.16
+--- !u!114 &817327308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817327302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d17871d85c89419dacc24f5fa85c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &825091901
 GameObject:
   m_ObjectHideFlags: 0
