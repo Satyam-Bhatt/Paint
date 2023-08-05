@@ -11,6 +11,7 @@ TagManager:
   - SceneRight2
   - SceneLeft1
   - SceneLeft2
+  - Brown
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - SceneChange
-  - 
+  - Color_Buttons
   - 
   - 
   - 
