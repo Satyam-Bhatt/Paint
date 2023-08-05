@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {   
-    private int x = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float x = 0;
 
     // Update is called once per frame
     void Update()
     {
-        
-   
-        transform.localScale = gameObject.transform.localScale + new Vector3(Mathf.Sin(x * Mathf.Deg2Rad), Mathf.Sin((x*2) * Mathf.Deg2Rad), 0);
+        if(x <= 360)
+        {
+            
+            transform.localScale = gameObject.transform.localScale + new Vector3(Mathf.Sin(Mathf.Deg2Rad * x) * 0.01f, Mathf.Cos(Mathf.Deg2Rad * x) * 0.006f, 0);
+            x = (x + 0.5f);
 
-        x++;
+        }
+
+        
+        if(x > 360)
+        {
+            x = 0;
+        }
 
     }
 }

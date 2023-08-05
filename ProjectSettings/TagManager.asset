@@ -54,3 +54,6 @@ TagManager:
   - name: Sprites
     uniqueID: 3760933633
     locked: 0
+  - name: Color Activator
+    uniqueID: 3524278969
+    locked: 0
