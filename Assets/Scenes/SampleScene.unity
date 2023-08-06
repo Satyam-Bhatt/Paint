@@ -1574,6 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06bdb7964e2c81488ded995208414ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brownButton: {fileID: 1111898367}
 --- !u!1001 &470592301
 PrefabInstance:
   m_ObjectHideFlags: 0
