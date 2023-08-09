@@ -19,8 +19,8 @@ public class Up_Map_Trigger : MonoBehaviour
             if (material.color == Color.black)
             {
                 _lifeActivator.blackCounter_Up++;
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
         }
     }
 }

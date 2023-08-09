@@ -20,6 +20,7 @@ public class MeshGeneration : MonoBehaviour
     [SerializeField] private Material redMaterial;
     [SerializeField] private Material greenMaterial;
     [SerializeField] private Material blackMaterial;
+    [SerializeField] private Material brownMaterial;
 
     private void Start()
     {
@@ -192,5 +193,11 @@ public class MeshGeneration : MonoBehaviour
     {
         materialAssign = new Material(materialAssign);
         materialAssign.color = Color.black;
+    }
+
+    public void BrownPressed()
+    {
+        materialAssign = new Material(materialAssign);
+        materialAssign = brownMaterial;
     }
 }

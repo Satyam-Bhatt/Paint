@@ -8,15 +8,19 @@ public class LifeActivator : MonoBehaviour
     public int blackCounter = 0;
     [HideInInspector]
     public int blackCounter_Up = 0;
-
+    [HideInInspector]
+    public int brownCounter = 0;
+         
     [SerializeField] private GameObject mainPathColorHalf;
     [SerializeField] private GameObject pathColor_Up;
+    [SerializeField] private GameObject mainPathColor_Full;
 
     // Start is called before the first frame update
     void Awake()
     {
         mainPathColorHalf.SetActive(false);
         pathColor_Up.SetActive(false);
+        mainPathColor_Full.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,6 +36,12 @@ public class LifeActivator : MonoBehaviour
         {
             pathColor_Up.SetActive(true);
             Destroy(GameObject.Find("Path_Up"));
+        }
+
+        if(brownCounter == 10)
+        {
+            mainPathColor_Full.SetActive(true);
+            Destroy(GameObject.Find("Main Path(Color1)"));
         }
     }
 }

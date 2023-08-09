@@ -19,8 +19,8 @@ public class Life_1_Trigger : MonoBehaviour
             if(material.color == Color.black)
             {
                 _lifeActivator.blackCounter++;
+                Destroy(this.gameObject);
             }
-            Destroy(this.gameObject);
         }
     }
 }
