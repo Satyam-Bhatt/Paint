@@ -34,25 +34,25 @@ public class PlayerTriggers : MonoBehaviour
 
         if (collision.gameObject.layer == 6 && collision.gameObject.tag == "SceneRight1")
         {
-            transform.position = new Vector3(transform.position.x + 18f, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x + 25f, transform.position.y, 0);
             m_Camera.transform.position = new Vector3(107.11f, 0, -10f);
         }
 
         if (collision.gameObject.layer == 6 && collision.gameObject.tag == "SceneRight2")
         {
-            transform.position = new Vector3(transform.position.x - 18f, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x - 25f, transform.position.y, 0);
             m_Camera.transform.position = new Vector3(0f, 0, -10f);
         }
 
         if (collision.gameObject.layer == 6 && collision.gameObject.tag == "SceneLeft1")
         {
-            transform.position = new Vector3(transform.position.x - 27f, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x - 35f, transform.position.y, 0);
             m_Camera.transform.position = new Vector3(-115.35f, 0, -10f);
         }
 
         if (collision.gameObject.layer == 6 && collision.gameObject.tag == "SceneLeft2")
         {
-            transform.position = new Vector3(transform.position.x + 27f, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x + 35f, transform.position.y, 0);
             m_Camera.transform.position = new Vector3(-0f, 0, -10f);
         }
 

@@ -7,7 +7,7 @@ public class Brown_Button : MonoBehaviour
 {
     [SerializeField] private GameObject brownButton;
 
-    private void Start()
+    private void Awake()
     {
         brownButton.SetActive(false);
     }
