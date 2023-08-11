@@ -17,10 +17,16 @@ public class CenterMap_Bridge : MonoBehaviour
     {
         if(collision.gameObject.tag == "ColorCollision")
         {
-            Material material = collision.gameObject.GetComponent<Material>();
-            if(material = _material_Brown)
+            Material material = collision.gameObject.GetComponent<MeshRenderer>().material;
+
+            Debug.Log("Grabbed Brown:    " + material.color.ToString());
+            Debug.Log("mera brown:    " + _material_Brown.color.ToString());
+
+            if(material.color == _material_Brown.color)
             {
                 Debug.Log("Brown Ke Saath Baj gya");
+                _lifeActivator.brownCounter++;
+                Destroy(this.gameObject);
             }
         }
     }
