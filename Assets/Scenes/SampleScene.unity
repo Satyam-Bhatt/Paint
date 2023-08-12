@@ -1825,6 +1825,7 @@ GameObject:
   - component: {fileID: 461647137}
   - component: {fileID: 461647138}
   - component: {fileID: 461647139}
+  - component: {fileID: 461647140}
   m_Layer: 7
   m_Name: Brown Activator
   m_TagString: Brown
@@ -1840,8 +1841,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461647134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.8, y: 125.6, z: 0}
-  m_LocalScale: {x: 2.644, y: 2.644, z: 2.644}
+  m_LocalPosition: {x: 21.44, y: 124.78, z: 0}
+  m_LocalScale: {x: 3.1392388, y: 3.1392388, z: 3.1392388}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 737032638}
@@ -1889,7 +1890,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4528302, g: 0.24136703, b: 0.24136703, a: 1}
+  m_Color: {r: 0.4245283, g: 0.1589192, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1940,6 +1941,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brownButton: {fileID: 242058421}
+--- !u!114 &461647140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461647134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2.57, y: -1.59}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &470592301
 PrefabInstance:
   m_ObjectHideFlags: 0
