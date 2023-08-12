@@ -49,11 +49,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Color
-    uniqueID: 3619456251
-    locked: 0
   - name: Sprites
     uniqueID: 3760933633
+    locked: 0
+  - name: Color
+    uniqueID: 3619456251
     locked: 0
   - name: Color Activator
     uniqueID: 3524278969

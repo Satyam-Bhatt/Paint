@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow_Material
+  m_Name: Red
   m_Shader: {fileID: -6465566751694194690, guid: f54ed35750af4cf44b885e60514c93cb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,10 +21,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_1529290e680e459bb80451e37922bb11_Texture_1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -43,6 +39,6 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.4056604, g: 0.18339628, b: 0.066972226, a: 1}
-    - _Glow: {r: 8, g: 8, b: 8, a: 0}
+    - _Color: {r: 0.745283, g: 0.1422307, b: 0.116011046, a: 0}
+    - _Glow: {r: 5.992157, g: 5.992157, b: 5.992157, a: 0}
   m_BuildTextureStacks: []
