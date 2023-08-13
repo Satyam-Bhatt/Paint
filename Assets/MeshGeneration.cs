@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MeshGeneration : MonoBehaviour
 {
@@ -75,11 +76,13 @@ public class MeshGeneration : MonoBehaviour
         mesh.triangles = triangles;
         mesh.MarkDynamic();
 
-        GameObject gameObject = new GameObject("Mesh", typeof(MeshFilter), typeof(MeshRenderer), typeof(EdgeCollider2D), typeof(PolygonCollider2D), typeof(Script));
+        GameObject gameObject = new GameObject("Mesh", typeof(MeshFilter), typeof(MeshRenderer), typeof(EdgeCollider2D), typeof(PolygonCollider2D), typeof(Script), typeof(SortingGroup));
         gameObject.tag = "ColorCollision";
 
         gameObject.GetComponent<MeshFilter>().mesh = mesh;
         gameObject.GetComponent<MeshRenderer>().material = materialAssign;
+
+        gameObject.GetComponent<SortingGroup>().sortingLayerName = "Color";
 
         lastSortingOrder++;
         gameObject.GetComponent<MeshRenderer>().sortingOrder = lastSortingOrder;
