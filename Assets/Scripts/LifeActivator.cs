@@ -12,11 +12,14 @@ public class LifeActivator : MonoBehaviour
     public int brownCounter = 0;
     [HideInInspector]
     public int blackCounter_Left = 0;
+    [HideInInspector]
+    public int blackCounter_Right = 0;
 
     [SerializeField] private GameObject mainPathColorHalf;
     [SerializeField] private GameObject pathColor_Up;
     [SerializeField] private GameObject mainPathColor_Full;
     [SerializeField] private GameObject pathColor_Left;
+    [SerializeField] private GameObject pathColor_Right;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +28,7 @@ public class LifeActivator : MonoBehaviour
         pathColor_Up.SetActive(false);
         mainPathColor_Full.SetActive(false);
         pathColor_Left.SetActive(false);
+        pathColor_Right.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,6 +60,13 @@ public class LifeActivator : MonoBehaviour
             pathColor_Left.SetActive(true);
             Destroy(GameObject.Find("Path_Left"));
             blackCounter_Left++;
+        }
+
+        if(blackCounter_Right == 1)
+        {
+            pathColor_Right.SetActive(true);
+            Destroy(GameObject.Find("Path_Right"));
+            blackCounter_Right++;
         }
     }
 }

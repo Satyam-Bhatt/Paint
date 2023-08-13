@@ -1,27 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 
-public class CenterMap_Bridge : MonoBehaviour
+public class Right_MapLife : MonoBehaviour
 {
     private LifeActivator _lifeActivator;
 
-    [SerializeField] private Material _material_Brown;
-
     private void Awake()
     {
-        _lifeActivator = FindAnyObjectByType<LifeActivator>();
+        _lifeActivator = FindObjectOfType<LifeActivator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "ColorCollision")
         {
             Material material = collision.gameObject.GetComponent<MeshRenderer>().material;
-
-            if(material.color == _material_Brown.color)
+            if (material.color == Color.black)
             {
-                _lifeActivator.brownCounter++;
+                _lifeActivator.blackCounter_Right++;
                 Destroy(this.gameObject);
             }
         }
