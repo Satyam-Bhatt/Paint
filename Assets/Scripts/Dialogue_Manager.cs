@@ -6,18 +6,38 @@ using TMPro;
 
 public class Dialogue_Manager : MonoBehaviour
 {
+    [HideInInspector]
+    public bool knight_Call = false;
+
+
+    [SerializeField] private GameObject panel;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
+
+    [SerializeField] private Vector3 position;
     
     private Queue<string> sentences;
 
     private void Start()
     {
+        panel.SetActive(false);
         sentences = new Queue<string>();
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        if(knight_Call)
+        {
+            panel.transform.position = new Vector3(-121.14f, -26.7f, 0f);
+        }
+
+        panel.SetActive(true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -40,12 +60,26 @@ public class Dialogue_Manager : MonoBehaviour
         else
         {
             string sentence = sentences.Dequeue();
-            dialogueText.text = sentence;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+
+            yield return new WaitForSecondsRealtime(0.05f);
         }
     }
 
     void EndDialogue()
     {
-        Debug.Log("Dialogue end");
+        knight_Call = false;
+        panel.SetActive(false);
     }
 }
