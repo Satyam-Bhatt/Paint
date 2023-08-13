@@ -15,11 +15,16 @@ public class LifeActivator : MonoBehaviour
     [HideInInspector]
     public int blackCounter_Right = 0;
 
+    [HideInInspector]
+    public int knighColorActivator = 0;
+
     [SerializeField] private GameObject mainPathColorHalf;
     [SerializeField] private GameObject pathColor_Up;
     [SerializeField] private GameObject mainPathColor_Full;
     [SerializeField] private GameObject pathColor_Left;
     [SerializeField] private GameObject pathColor_Right;
+
+    [SerializeField] private GameObject knightColor;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,6 +34,8 @@ public class LifeActivator : MonoBehaviour
         mainPathColor_Full.SetActive(false);
         pathColor_Left.SetActive(false);
         pathColor_Right.SetActive(false);
+
+        knightColor.SetActive(false);   
     }
 
     // Update is called once per frame
@@ -67,6 +74,12 @@ public class LifeActivator : MonoBehaviour
             pathColor_Right.SetActive(true);
             Destroy(GameObject.Find("Path_Right"));
             blackCounter_Right++;
+        }
+
+        if(knighColorActivator == 1)
+        {
+            knightColor.SetActive(true);
+            knighColorActivator++;
         }
     }
 }
