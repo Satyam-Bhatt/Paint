@@ -76,7 +76,7 @@ public class LifeActivator : MonoBehaviour
             blackCounter_Right++;
         }
 
-        if(knighColorActivator == 1)
+        if(knighColorActivator == 6)
         {
             knightColor.SetActive(true);
             knighColorActivator++;
