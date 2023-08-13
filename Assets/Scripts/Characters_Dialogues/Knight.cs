@@ -15,4 +15,12 @@ public class Knight : MonoBehaviour
     {
         FindObjectOfType<Dialogue_Manager>().StartDialogue(dialogue);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Killed You");   
+        }
+    }
 }

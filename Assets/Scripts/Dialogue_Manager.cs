@@ -8,6 +8,8 @@ public class Dialogue_Manager : MonoBehaviour
 {
     [HideInInspector]
     public bool knight_Call = false;
+    [HideInInspector]
+    public bool guitarGirl_Call = false;
 
 
     [SerializeField] private GameObject panel;
@@ -26,7 +28,7 @@ public class Dialogue_Manager : MonoBehaviour
 
     private void Update()
     {
-        
+        //panel.transform.position = position;
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -34,6 +36,10 @@ public class Dialogue_Manager : MonoBehaviour
         if(knight_Call)
         {
             panel.transform.position = new Vector3(-121.14f, -26.7f, 0f);
+        }
+        if(guitarGirl_Call)
+        {
+            panel.transform.position = new Vector3(118.47f, 31.35f, 0f);
         }
 
         panel.SetActive(true);

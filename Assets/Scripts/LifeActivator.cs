@@ -17,6 +17,8 @@ public class LifeActivator : MonoBehaviour
 
     [HideInInspector]
     public int knighColorActivator = 0;
+    [HideInInspector]
+    public int guitarColorActivtor = 0;
 
     [SerializeField] private GameObject mainPathColorHalf;
     [SerializeField] private GameObject pathColor_Up;
@@ -25,6 +27,7 @@ public class LifeActivator : MonoBehaviour
     [SerializeField] private GameObject pathColor_Right;
 
     [SerializeField] private GameObject knightColor;
+    [SerializeField] private GameObject GuitarGirlColor;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +39,7 @@ public class LifeActivator : MonoBehaviour
         pathColor_Right.SetActive(false);
 
         knightColor.SetActive(false);   
+        GuitarGirlColor.SetActive(false);
     }
 
     // Update is called once per frame
@@ -80,6 +84,12 @@ public class LifeActivator : MonoBehaviour
         {
             knightColor.SetActive(true);
             knighColorActivator++;
+        }
+
+        if(guitarColorActivtor == 1) 
+        {
+            GuitarGirlColor.SetActive(true);
+            guitarColorActivtor++;
         }
     }
 }
