@@ -49,12 +49,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Sprites
+  - name: BW_Path
     uniqueID: 3760933633
+    locked: 0
+  - name: Colored_Path
+    uniqueID: 804841303
     locked: 0
   - name: Color
     uniqueID: 3619456251
     locked: 0
+  - name: BW_Character
+    uniqueID: 4098184245
+    locked: 0
+  - name: Color_Character
+    uniqueID: 4028413273
+    locked: 0
   - name: Color Activator
     uniqueID: 3524278969
+    locked: 0
+  - name: Player
+    uniqueID: 2776770263
     locked: 0
