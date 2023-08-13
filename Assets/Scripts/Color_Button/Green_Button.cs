@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Brown_Button : MonoBehaviour
+public class Green_Button : MonoBehaviour
 {
-    [SerializeField] private GameObject brownButton;
+    [SerializeField] private GameObject greenButton;
 
     private void Awake()
     {
-        brownButton.SetActive(false);
+        greenButton.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            brownButton.SetActive(true);
+            greenButton.SetActive(true);
             Destroy(this.gameObject);
         }
     }

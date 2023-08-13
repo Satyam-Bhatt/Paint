@@ -62,7 +62,7 @@ public class LifeActivator : MonoBehaviour
             blackCounter_Left++;
         }
 
-        if(blackCounter_Right == 1)
+        if(blackCounter_Right == 6)
         {
             pathColor_Right.SetActive(true);
             Destroy(GameObject.Find("Path_Right"));

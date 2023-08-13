@@ -13,7 +13,11 @@ public class Red_Button : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        redButton.SetActive(true);
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            redButton.SetActive(true);
+            Destroy(this.gameObject);
+        }
+       
     }
 }
