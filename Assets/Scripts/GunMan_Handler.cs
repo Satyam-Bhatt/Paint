@@ -11,19 +11,28 @@ public class GunMan_Handler : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform bullet_Posi;
 
+    private bool stopper = true;
+
     private void Update()
     {
-        if(colorDetector.red == true)
+        if(colorDetector.red == true && stopper)
         {
-            Vector2 dir = player.transform.position - bullet_Posi.transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, dir);
-
-            Instantiate(bullet, bullet_Posi.transform.position, targetRotation);
+            StartCoroutine(bulletCoroutine());
+            stopper = false;
         }
 
         if(colorDetector.green == true)
         {
 
+        }
+    }
+
+    public IEnumerator bulletCoroutine()
+    {
+        while (true)
+        {
+            Instantiate(bullet, bullet_Posi.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
