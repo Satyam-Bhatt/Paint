@@ -8,19 +8,31 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 100f;
     
     private Movement player;
-    private Rigidbody2D rb;
+    private GunMan_Handler gunMan;
+    private Snake_Handler snake;
 
     private Vector3 dir;
 
     private void Awake()
     {
         player = FindObjectOfType<Movement>();
-        rb = GetComponent<Rigidbody2D>();
+        gunMan = FindObjectOfType<GunMan_Handler>();
+        snake = FindObjectOfType<Snake_Handler>();
     }
 
     private void Start()
     {
-        dir = (player.transform.position - transform.position).normalized;
+        if(gunMan.killPlayer)
+        {
+            dir = (player.transform.position - transform.position).normalized;
+            
+        }
+
+        if (gunMan.killSnake)
+        {
+            dir = (snake.transform.position - transform.position).normalized;
+        }
+
         transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(dir));
     }
 

@@ -21,6 +21,8 @@ public class LifeActivator : MonoBehaviour
     public int guitarColorActivtor = 0;
     [HideInInspector]
     public int gunManColorActivator = 0;
+    [HideInInspector]
+    public int snakeColorActivator = 0;
 
     [SerializeField] private GameObject mainPathColorHalf;
     [SerializeField] private GameObject pathColor_Up;
@@ -31,6 +33,7 @@ public class LifeActivator : MonoBehaviour
     [SerializeField] private GameObject knightColor;
     [SerializeField] private GameObject GuitarGirlColor;
     [SerializeField] private GameObject gunManColor;
+    [SerializeField] private GameObject snakeColor;
 
     // Start is called before the first frame update
     void Awake()
@@ -44,6 +47,7 @@ public class LifeActivator : MonoBehaviour
         knightColor.SetActive(false);   
         GuitarGirlColor.SetActive(false);
         gunManColor.SetActive(false);
+        snakeColor.SetActive(false);
     }
 
     // Update is called once per frame
@@ -100,6 +104,12 @@ public class LifeActivator : MonoBehaviour
         {
             gunManColor.SetActive(true);
             gunManColorActivator++;
+        }
+
+        if(snakeColorActivator == 1)
+        {
+            snakeColor.SetActive(true);
+            snakeColorActivator++;
         }
     }
 }
