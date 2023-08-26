@@ -24,16 +24,22 @@ public class Bullet : MonoBehaviour
     {
         if(gunMan.killPlayer)
         {
+            this.gameObject.tag = "Player Killer";
+
             dir = (player.transform.position - transform.position).normalized;
             
         }
 
         if (gunMan.killSnake)
         {
+            this.gameObject.tag = "Snake Killer";
+
             dir = (snake.transform.position - transform.position).normalized;
         }
 
         transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(dir));
+
+        Invoke("Destroy", 5f);
     }
 
     // Update is called once per frame
@@ -51,5 +57,10 @@ public class Bullet : MonoBehaviour
             n += 360;
         }
         return n;
+    }
+
+    private void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 }

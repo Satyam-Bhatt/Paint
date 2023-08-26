@@ -12,6 +12,8 @@ TagManager:
   - SceneLeft1
   - SceneLeft2
   - Brown
+  - Player Killer
+  - Snake Killer
   layers:
   - Default
   - TransparentFX

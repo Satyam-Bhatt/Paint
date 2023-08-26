@@ -56,5 +56,10 @@ public class PlayerTriggers : MonoBehaviour
             m_Camera.transform.position = new Vector3(-0f, 0, -10f);
         }
 
+        if(collision.gameObject.tag == "Player Killer")
+        {
+            Destroy(collision.gameObject);
+        }
+
     }
 }
