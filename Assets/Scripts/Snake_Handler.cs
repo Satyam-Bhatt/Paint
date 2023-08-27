@@ -9,6 +9,7 @@ public class Snake_Handler : MonoBehaviour
     [SerializeField] private GameObject deleteSnake;
 
     [SerializeField] private float speed = 10f;
+    [SerializeField] private GameObject killedSnake;
 
     private Bool_Handler snakeBool;
 
@@ -20,15 +21,16 @@ public class Snake_Handler : MonoBehaviour
     private void Start()
     {
         deleteSnake.SetActive(false);
+        killedSnake.SetActive(false);
         snakeBool.snakeAlive = true;       
     }
 
     private void Update()
     {
         Vector3 dir = (player.position - transform.position).normalized;
-        transform.Translate(dir * Time.deltaTime * speed);
+        transform.Translate(dir * Time.deltaTime * speed, Space.World);
 
-        transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(dir));
+        transform.rotation = Quaternion.Euler(Vector3.forward * (GetAngleFromVectorFloat(dir)));
     }
 
     private float GetAngleFromVectorFloat(Vector3 dir)
@@ -40,5 +42,16 @@ public class Snake_Handler : MonoBehaviour
             n += 360;
         }
         return n;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Snake Killer")
+        {
+            Destroy(collision.gameObject);
+            killedSnake.transform.position = transform.position;
+            killedSnake.transform.rotation = transform.rotation;
+            killedSnake.SetActive(true);
+        }
     }
 }
