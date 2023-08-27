@@ -41,6 +41,8 @@ public class LifeActivator : MonoBehaviour
     [SerializeField] private GameObject snakeToRope_Color;
     [SerializeField] private GameObject house_Color;
 
+    private bool houseChecker = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -120,7 +122,7 @@ public class LifeActivator : MonoBehaviour
             snakeColorActivator++;
         }
 
-        if(snakeToRope_Activator == 1)
+        if(snakeToRope_Activator == 1 && houseChecker)
         {
             snakeToRope_Color.SetActive(true);
             snakeToRope_Activator++;
@@ -129,6 +131,7 @@ public class LifeActivator : MonoBehaviour
         if(houseActivator == 6)
         {
             house_Color.SetActive(true);
+            houseChecker = true;
             houseActivator++;
         }
     }
