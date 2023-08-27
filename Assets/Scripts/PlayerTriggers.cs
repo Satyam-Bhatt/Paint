@@ -61,5 +61,11 @@ public class PlayerTriggers : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if((collision.gameObject.tag == "Snake"))
+        {
+            //kill player somehow
+            Debug.Log("Kill Player");
+        }
+
     }
 }

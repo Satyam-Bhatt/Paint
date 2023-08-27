@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TreeEditor;
 using UnityEngine;
 
 public class Snake_Handler : MonoBehaviour
@@ -11,18 +12,18 @@ public class Snake_Handler : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private GameObject killedSnake;
 
-    private Bool_Handler snakeBool;
+    private Bool_Handler bool_Handler;
 
     private void Awake()
     {
-        snakeBool = FindObjectOfType<Bool_Handler>();
+        bool_Handler = FindObjectOfType<Bool_Handler>();
     }
 
     private void Start()
     {
         deleteSnake.SetActive(false);
         killedSnake.SetActive(false);
-        snakeBool.snakeAlive = true;       
+        bool_Handler.snakeAlive = true;       
     }
 
     private void Update()
@@ -49,9 +50,12 @@ public class Snake_Handler : MonoBehaviour
         if(collision.gameObject.tag == "Snake Killer")
         {
             Destroy(collision.gameObject);
+
+            bool_Handler.bulletCoroutine_Snake = false;
             killedSnake.transform.position = transform.position;
             killedSnake.transform.rotation = transform.rotation;
             killedSnake.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }

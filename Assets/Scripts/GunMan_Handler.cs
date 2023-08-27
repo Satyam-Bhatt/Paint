@@ -18,7 +18,8 @@ public class GunMan_Handler : MonoBehaviour
 
     private bool stopper = true;
     private bool dialogueStopper = true;
-    private Bool_Handler snakeAlive;
+    private bool coroutineStopper = true; 
+    private Bool_Handler bool_Handler;
 
     [HideInInspector]
     public bool killPlayer = false;
@@ -26,9 +27,11 @@ public class GunMan_Handler : MonoBehaviour
     [HideInInspector]
     public bool killSnake = false;
 
+    private Coroutine bulletCoroutine = null;
+
     private void Awake()
     {
-        snakeAlive = FindObjectOfType<Bool_Handler>();  
+        bool_Handler = FindObjectOfType<Bool_Handler>();  
         
         dialogue.SetActive(false);
     }
@@ -37,7 +40,7 @@ public class GunMan_Handler : MonoBehaviour
     {
         if(colorDetector.red == true && stopper)
         {
-            StartCoroutine(bulletCoroutine());
+            bulletCoroutine = StartCoroutine(BulletCoroutine());
             killPlayer = true;
             dialogue.SetActive(true);
             StartCoroutine(TextAppear(kill_Text.text));
@@ -53,17 +56,23 @@ public class GunMan_Handler : MonoBehaviour
                 FindObjectOfType<Dialogue_Manager>().StartDialogue(gun_ManHelp_Dialogue);
                 dialogueStopper = false;
             }
-                if(stopper && snakeAlive.snakeAlive)
+                if(stopper && bool_Handler.snakeAlive)
                 {
-                    StartCoroutine(bulletCoroutine());
+                    bulletCoroutine = StartCoroutine(BulletCoroutine());
                     killSnake = true;
                     stopper = false;
                 }
             
         }
+
+        if(bool_Handler.bulletCoroutine_Snake == false && coroutineStopper)
+        {
+            StopCoroutine(bulletCoroutine);
+            coroutineStopper = false;
+        }
     }
 
-    public IEnumerator bulletCoroutine()
+    public IEnumerator BulletCoroutine()
     {
         while (true)
         {
