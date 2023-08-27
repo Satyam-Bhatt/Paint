@@ -5,17 +5,20 @@ using UnityEngine;
 public class PlayerTriggers : MonoBehaviour
 {
     [SerializeField] private Camera m_Camera;
+    [SerializeField] private GameObject star;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool starMove = false;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (starMove)
+        {
+            Vector3 dir = (transform.position - star.transform.localPosition).normalized;
+            star.transform.Translate(dir * Time.deltaTime * 10f);
+
+            star.transform.localScale = new Vector3(star.transform.localScale.x - Time.deltaTime, star.transform.localScale.y - Time.deltaTime, star.transform.localScale.z);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,9 +64,20 @@ public class PlayerTriggers : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if((collision.gameObject.tag == "Snake"))
+        if(collision.gameObject.tag == "Snake")
         {
             //kill player somehow
+        }
+
+        if(collision.gameObject.tag == "Rope")
+        {
+            starMove = true;
+        }
+
+        if (collision.gameObject.tag == "Star")
+        {
+            Destroy(collision.gameObject);
+            //star collected game won
         }
 
     }
