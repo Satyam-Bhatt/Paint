@@ -30,12 +30,17 @@ public class Dialogue_Manager : MonoBehaviour
 
     private void Update()
     {
-       //panel.transform.position = position;
+        //panel.transform.position = position;
+        Debug.Log("Kinght Call :" + knight_Call);
+        Debug.Log("Guitar Call :" + guitarGirl_Call);
+        Debug.Log("Gun Call :" + gunMan_Call);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        if(knight_Call)
+        panel.SetActive(true);
+
+        if (knight_Call)
         {
             panel.transform.position = new Vector3(-121.14f, -26.7f, 0f);
         }
@@ -44,9 +49,10 @@ public class Dialogue_Manager : MonoBehaviour
             panel.transform.position = new Vector3(118.47f, 31.35f, 0f);
         }
 
-        if (gunMan_Call) panel.transform.position = new Vector3(26.8f, -14.8f, 0);
-
-        panel.SetActive(true);
+        if (gunMan_Call)
+        {
+            panel.transform.position = new Vector3(26.8f, -14.8f, 0);
+        }
 
         nameText.text = dialogue.name;
 
@@ -90,6 +96,8 @@ public class Dialogue_Manager : MonoBehaviour
     void EndDialogue()
     {
         knight_Call = false;
+        guitarGirl_Call = false;
+        gunMan_Call = false;
         panel.SetActive(false);
     }
 }
