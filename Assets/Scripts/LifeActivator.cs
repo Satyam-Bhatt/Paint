@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class LifeActivator : MonoBehaviour
@@ -41,6 +42,9 @@ public class LifeActivator : MonoBehaviour
     [SerializeField] private GameObject snakeToRope_Color;
     [SerializeField] private GameObject house_Color;
 
+    [Header("Paint Strokes")]
+    [SerializeField] private GameObject parent;
+
     private bool houseChecker = false;
 
     // Start is called before the first frame update
@@ -68,6 +72,8 @@ public class LifeActivator : MonoBehaviour
             mainPathColorHalf.SetActive(true);
             Destroy(GameObject.Find("MainRoad"));
             blackCounter++;
+
+            DestroyMeshes();
         }
 
         if(blackCounter_Up == 12)
@@ -75,6 +81,8 @@ public class LifeActivator : MonoBehaviour
             pathColor_Up.SetActive(true);
             Destroy(GameObject.Find("Path_Up"));
             blackCounter_Up++;
+
+            DestroyMeshes();
         }
 
         if(brownCounter == 10)
@@ -82,6 +90,8 @@ public class LifeActivator : MonoBehaviour
             mainPathColor_Full.SetActive(true);
             Destroy(GameObject.Find("ExceptRoad"));
             brownCounter++;
+
+            DestroyMeshes();
         }
 
         if(blackCounter_Left == 6)
@@ -89,6 +99,8 @@ public class LifeActivator : MonoBehaviour
             pathColor_Left.SetActive(true);
             Destroy(GameObject.Find("Path_Left"));
             blackCounter_Left++;
+
+            DestroyMeshes();
         }
 
         if(blackCounter_Right == 6)
@@ -96,36 +108,48 @@ public class LifeActivator : MonoBehaviour
             pathColor_Right.SetActive(true);
             Destroy(GameObject.Find("Path_Right"));
             blackCounter_Right++;
+
+            DestroyMeshes();
         }
 
         if(knighColorActivator == 6)
         {
             knightColor.SetActive(true);
             knighColorActivator++;
+
+            DestroyMeshes();
         }
 
         if(guitarColorActivtor == 1) 
         {
             GuitarGirlColor.SetActive(true);
             guitarColorActivtor++;
+
+            DestroyMeshes();
         }
 
         if(gunManColorActivator == 1)
         {
             gunManColor.SetActive(true);
             gunManColorActivator++;
+
+            DestroyMeshes();
         }
 
         if(snakeColorActivator == 1)
         {
             snakeColor.SetActive(true);
             snakeColorActivator++;
+
+            DestroyMeshes();
         }
 
         if(snakeToRope_Activator == 1 && houseChecker)
         {
             snakeToRope_Color.SetActive(true);
             snakeToRope_Activator++;
+
+            DestroyMeshes();
         }
 
         if(houseActivator == 6)
@@ -133,6 +157,16 @@ public class LifeActivator : MonoBehaviour
             house_Color.SetActive(true);
             houseChecker = true;
             houseActivator++;
+
+            DestroyMeshes();
+        }
+    }
+
+    private void DestroyMeshes()
+    {
+        for(int i = parent.transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(parent.transform.GetChild(i).gameObject);
         }
     }
 }

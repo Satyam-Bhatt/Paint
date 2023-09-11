@@ -153,7 +153,10 @@ public class MeshGeneration : MonoBehaviour
             mesh.uv = uv;
             mesh.triangles = triangles;
 
-            edgeCollider.points = ConvertToPolygonPoints(mesh.vertices);
+            if(edgeCollider != null)
+            {
+                edgeCollider.points = ConvertToPolygonPoints(mesh.vertices);
+            }
 
             lastMousePosition = mousePosition;
         }

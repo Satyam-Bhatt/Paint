@@ -31,9 +31,6 @@ public class Dialogue_Manager : MonoBehaviour
     private void Update()
     {
         //panel.transform.position = position;
-        Debug.Log("Kinght Call :" + knight_Call);
-        Debug.Log("Guitar Call :" + guitarGirl_Call);
-        Debug.Log("Gun Call :" + gunMan_Call);
     }
 
     public void StartDialogue(Dialogue dialogue)
