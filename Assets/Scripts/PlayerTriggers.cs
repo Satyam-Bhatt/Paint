@@ -6,12 +6,21 @@ public class PlayerTriggers : MonoBehaviour
 {
     [SerializeField] private Camera m_Camera;
     [SerializeField] private GameObject star;
+    [SerializeField] private GameObject win_Panel;
 
     private bool starMove = false;
 
+    private Menu_Handler m_Handler;
+
+    private void Awake()
+    {
+        m_Handler = FindObjectOfType<Menu_Handler>();
+        win_Panel.SetActive(false);
+    }
+
     private void Update()
     {
-        if (starMove)
+        if (starMove && star)
         {
             Vector3 dir = (transform.position - star.transform.localPosition).normalized;
             star.transform.Translate(dir * Time.deltaTime * 10f);
@@ -62,11 +71,12 @@ public class PlayerTriggers : MonoBehaviour
         if(collision.gameObject.tag == "Player Killer")
         {
             Destroy(collision.gameObject);
+            m_Handler.playerDied = true;
         }
 
         if(collision.gameObject.tag == "Snake")
         {
-            //kill player somehow
+            m_Handler.playerDied = true;
         }
 
         if(collision.gameObject.tag == "Rope")
@@ -77,7 +87,7 @@ public class PlayerTriggers : MonoBehaviour
         if (collision.gameObject.tag == "Star")
         {
             Destroy(collision.gameObject);
-            //star collected game won
+            win_Panel.SetActive(true);
         }
 
     }

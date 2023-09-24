@@ -18,6 +18,13 @@ public class MeshGeneration : MonoBehaviour
     [SerializeField] private Material blackMaterial;
     [SerializeField] private Material brownMaterial;
 
+    private Menu_Handler menuHandler;
+
+    private void Awake()
+    {
+        menuHandler = FindObjectOfType<Menu_Handler>();
+    }
+
     private void Start()
     {
         materialAssign = blackMaterial;
@@ -42,6 +49,11 @@ public class MeshGeneration : MonoBehaviour
 
     private void OnMouseButtonDown(Vector3 mousePosition)
     {
+        if(menuHandler.paused)
+        {
+            return;
+        }
+
         Vector3[] verticies = new Vector3[4];
         Vector2[] uv = new Vector2[4];
         int[] triangles = new int[6];
@@ -105,6 +117,11 @@ public class MeshGeneration : MonoBehaviour
 
     private void OnMouseButtonHold(Vector3 mousePosition, Camera camera)
     {
+        if (menuHandler.paused)
+        {
+            return;
+        }
+
         Vector3 currentPos = GetMouseWorldPosition(camera);
         if (Vector3.Distance(currentPos, lastMousePosition) > polyDistance)
         {

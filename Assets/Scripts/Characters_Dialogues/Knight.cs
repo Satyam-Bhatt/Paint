@@ -8,10 +8,13 @@ public class Knight : MonoBehaviour
 
     [SerializeField] private GameObject panel;
 
+    private Menu_Handler menuHandler;
+
     private void Awake()
     {
         panel.SetActive(false);
         FindObjectOfType<Dialogue_Manager>().knight_Call = true;
+        menuHandler = FindObjectOfType<Menu_Handler>();
     }
 
     private void Start()
@@ -23,7 +26,7 @@ public class Knight : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Killed You");   
+            menuHandler.playerDied = true;  
         }
     }
 }
