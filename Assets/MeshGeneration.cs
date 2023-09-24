@@ -205,7 +205,5 @@ public class MeshGeneration : MonoBehaviour
     public void LineThickness(float value)
     {
         lineThickness = value;
-        Debug.Log("Line Thickness: " + lineThickness);
-        Debug.Log("Value: " + value);
     }
 }

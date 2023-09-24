@@ -78,3 +78,6 @@ TagManager:
   - name: Dialogue
     uniqueID: 2072870251
     locked: 0
+  - name: Paint Hider
+    uniqueID: 2498209001
+    locked: 0
