@@ -67,47 +67,47 @@ public class LifeActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(blackCounter == 6)
+        if(blackCounter >= 4 && blackCounter <= 20)
         {
             mainPathColorHalf.SetActive(true);
             Destroy(GameObject.Find("MainRoad"));
-            blackCounter++;
+            blackCounter = 40;
 
             DestroyMeshes();
         }
 
-        if(blackCounter_Up == 12)
+        if(blackCounter_Up >= 9 && blackCounter_Up <= 20)
         {
             pathColor_Up.SetActive(true);
             Destroy(GameObject.Find("Path_Up"));
-            blackCounter_Up++;
+            blackCounter_Up = 40;
 
             DestroyMeshes();
         }
 
-        if(brownCounter == 10)
+        if(brownCounter >= 8 && brownCounter <=20)
         {
             mainPathColor_Full.SetActive(true);
             Destroy(GameObject.Find("ExceptRoad"));
-            brownCounter++;
+            brownCounter = 40;
 
             DestroyMeshes();
         }
 
-        if(blackCounter_Left == 6)
+        if(blackCounter_Left >= 5 && blackCounter_Left <= 20)
         {
             pathColor_Left.SetActive(true);
             Destroy(GameObject.Find("Path_Left"));
-            blackCounter_Left++;
+            blackCounter_Left = 40;
 
             DestroyMeshes();
         }
 
-        if(blackCounter_Right == 6)
+        if(blackCounter_Right >= 5 && blackCounter_Right <= 20)
         {
             pathColor_Right.SetActive(true);
             Destroy(GameObject.Find("Path_Right"));
-            blackCounter_Right++;
+            blackCounter_Right = 40;
 
             DestroyMeshes();
         }
