@@ -5,7 +5,7 @@ using UnityEngine;
 public class Guitar_Girl_Life : MonoBehaviour
 {
     private LifeActivator _lifeActivator;
-    public AudioHandler _audioHandler;
+    private AudioHandler _audioHandler;
 
     private void Awake()
     {

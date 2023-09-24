@@ -112,57 +112,57 @@ public class LifeActivator : MonoBehaviour
             DestroyMeshes();
         }
 
-        if(knighColorActivator == 6)
+        if(knighColorActivator >= 6  && knighColorActivator <= 20)
         {
             knightColor.SetActive(true);
-            knighColorActivator++;
+            knighColorActivator = 40;
 
             DestroyMeshes();
         }
 
-        if(guitarColorActivtor == 1) 
+        if(guitarColorActivtor >= 1 && guitarColorActivtor <= 20) 
         {
             GuitarGirlColor.SetActive(true);
-            guitarColorActivtor++;
+            guitarColorActivtor = 40;
 
             DestroyMeshes();
         }
 
-        if(gunManColorActivator == 1)
+        if(gunManColorActivator >= 1  && gunManColorActivator <= 20)
         {
             gunManColor.SetActive(true);
-            gunManColorActivator++;
+            gunManColorActivator = 40;
 
             DestroyMeshes();
         }
 
-        if(snakeColorActivator == 1)
+        if(snakeColorActivator >= 1 && snakeColorActivator <= 20)
         {
             snakeColor.SetActive(true);
-            snakeColorActivator++;
+            snakeColorActivator = 40;
 
             DestroyMeshes();
         }
 
-        if(snakeToRope_Activator == 1 && houseChecker)
+        if(snakeToRope_Activator >= 1 && snakeToRope_Activator <= 10 && houseChecker)
         {
             snakeToRope_Color.SetActive(true);
-            snakeToRope_Activator++;
+            snakeToRope_Activator = 40;
 
             DestroyMeshes();
         }
 
-        if(houseActivator == 6)
+        if(houseActivator >= 6  && houseActivator <=20)
         {
             house_Color.SetActive(true);
             houseChecker = true;
-            houseActivator++;
+            houseActivator = 40;
 
             DestroyMeshes();
         }
     }
 
-    private void DestroyMeshes()
+    public void DestroyMeshes()
     {
         for(int i = parent.transform.childCount - 1; i >= 0; i--)
         {

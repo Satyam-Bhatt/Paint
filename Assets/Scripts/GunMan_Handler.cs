@@ -31,6 +31,8 @@ public class GunMan_Handler : MonoBehaviour
 
     private Coroutine bulletCoroutine = null;
 
+    private bool setOnce = true;
+
     private void Awake()
     {
         bool_Handler = FindObjectOfType<Bool_Handler>();  
@@ -51,21 +53,26 @@ public class GunMan_Handler : MonoBehaviour
         }
 
         if(colorDetector.green == true)
-        { 
-            
-            if (dialogueStopper)
+        {
+            if (setOnce)
             {
                 panel.SetActive(false);
+                setOnce = false;
+            }
+
+            if (dialogueStopper)
+            {
+                
                 FindObjectOfType<Dialogue_Manager>().gunMan_Call = true;
                 FindObjectOfType<Dialogue_Manager>().StartDialogue(gun_ManHelp_Dialogue);
                 dialogueStopper = false;
             }
-                if(stopper && bool_Handler.snakeAlive)
-                {
-                    bulletCoroutine = StartCoroutine(BulletCoroutine());
-                    killSnake = true;
-                    stopper = false;
-                }
+            if(stopper && bool_Handler.snakeAlive)
+            {
+                bulletCoroutine = StartCoroutine(BulletCoroutine());
+                killSnake = true;
+                stopper = false;
+            }
             
         }
 
