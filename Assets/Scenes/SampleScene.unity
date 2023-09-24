@@ -5266,6 +5266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guitarGirl: {fileID: 8300000, guid: 4b6931476d6092441960ab0ea7886287, type: 3}
+  playSIMP: 0
 --- !u!82 &519420035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5278,7 +5279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 025b003fbc38f3346a99daaad6f7d7b2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7322,6 +7323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb5b7837842ebf40a91d6c83c03e231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioHandler: {fileID: 0}
 --- !u!1 &794691183
 GameObject:
   m_ObjectHideFlags: 0
@@ -12157,6 +12159,7 @@ MonoBehaviour:
     - You Naive, why you invade my territory?
     - I would kill you, don't come near me.
     - This stupid armor limits my movement.
+  panel: {fileID: 665119991}
 --- !u!1 &1410464076
 GameObject:
   m_ObjectHideFlags: 0
@@ -13771,6 +13774,7 @@ MonoBehaviour:
     sentences:
     - Hello FRIEND
     - I am here to protect you from this cruel world.
+  panel: {fileID: 665119991}
   killPlayer: 0
   killSnake: 0
 --- !u!60 &1624648033
@@ -15268,8 +15272,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1853818348}
   - component: {fileID: 1853818349}
-  - component: {fileID: 1853818350}
   - component: {fileID: 1853818351}
+  - component: {fileID: 1853818350}
   m_Layer: 0
   m_Name: Guitar_Girl(Color)
   m_TagString: Untagged
@@ -15362,6 +15366,7 @@ MonoBehaviour:
     - I play my guitar like a sitar
     - Hey, FRIEND  join me here for a melody.
     - As a lazy game developer I haven't added any music
+  panel: {fileID: 665119991}
 --- !u!60 &1853818351
 PolygonCollider2D:
   m_ObjectHideFlags: 0

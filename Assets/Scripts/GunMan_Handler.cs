@@ -16,6 +16,8 @@ public class GunMan_Handler : MonoBehaviour
 
     [SerializeField] private Dialogue gun_ManHelp_Dialogue;
 
+    [SerializeField] private GameObject panel;
+
     private bool stopper = true;
     private bool dialogueStopper = true;
     private bool coroutineStopper = true; 
@@ -50,9 +52,11 @@ public class GunMan_Handler : MonoBehaviour
 
         if(colorDetector.green == true)
         { 
-            FindObjectOfType<Dialogue_Manager>().gunMan_Call = true;
+            
             if (dialogueStopper)
             {
+                panel.SetActive(false);
+                FindObjectOfType<Dialogue_Manager>().gunMan_Call = true;
                 FindObjectOfType<Dialogue_Manager>().StartDialogue(gun_ManHelp_Dialogue);
                 dialogueStopper = false;
             }

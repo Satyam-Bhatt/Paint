@@ -6,8 +6,11 @@ public class Knight : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    [SerializeField] private GameObject panel;
+
     private void Awake()
     {
+        panel.SetActive(false);
         FindObjectOfType<Dialogue_Manager>().knight_Call = true;
     }
 

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Guitar_Girl_Life : MonoBehaviour
 {
     private LifeActivator _lifeActivator;
+    public AudioHandler _audioHandler;
 
     private void Awake()
     {
         _lifeActivator = FindObjectOfType<LifeActivator>();
+        _audioHandler = FindObjectOfType<AudioHandler>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,6 +21,7 @@ public class Guitar_Girl_Life : MonoBehaviour
             if(material.color == Color.green)
             {
                 _lifeActivator.guitarColorActivtor++;
+                _audioHandler.playSIMP = true;
                 Destroy(this.gameObject);
             }
         }

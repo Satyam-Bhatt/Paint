@@ -8,7 +8,8 @@ public class AudioHandler : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private bool playSIMP = false;
+    [HideInInspector]
+    public bool playSIMP = false;
     
     // Start is called before the first frame update
     void Awake()
