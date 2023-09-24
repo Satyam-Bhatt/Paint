@@ -201,4 +201,11 @@ public class MeshGeneration : MonoBehaviour
         materialAssign = new Material(materialAssign);
         materialAssign = brownMaterial;
     }
+
+    public void LineThickness(float value)
+    {
+        lineThickness = value;
+        Debug.Log("Line Thickness: " + lineThickness);
+        Debug.Log("Value: " + value);
+    }
 }
