@@ -7,11 +7,15 @@ public class Menu_Handler : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject died;
+    [SerializeField] private GameObject start_Panel;
 
     public bool paused = false;
 
     [HideInInspector]
     public bool playerDied = false;
+
+    [HideInInspector]
+    public bool startPanelOn = true;
 
     private void Awake()
     {
@@ -59,5 +63,11 @@ public class Menu_Handler : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void BeginGame()
+    {
+        start_Panel.SetActive(false);
+        startPanelOn = false;
     }
 }

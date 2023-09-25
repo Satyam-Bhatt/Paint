@@ -14,5 +14,6 @@ public class Camera_Sript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Screen.SetResolution(1080, 1080, true);
     }
 }

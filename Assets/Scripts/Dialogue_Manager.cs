@@ -48,7 +48,7 @@ public class Dialogue_Manager : MonoBehaviour
 
         if (gunMan_Call)
         {
-            panel.transform.position = new Vector3(26.8f, -14.8f, 0);
+            panel.transform.position = new Vector3(12.51f, -15.31f, 0);
         }
 
         nameText.text = dialogue.name;

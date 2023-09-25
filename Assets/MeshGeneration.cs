@@ -51,7 +51,7 @@ public class MeshGeneration : MonoBehaviour
 
     private void OnMouseButtonDown(Vector3 mousePosition)
     {
-        if(menuHandler.paused)
+        if(menuHandler.paused || menuHandler.startPanelOn)
         {
             return;
         }
@@ -119,7 +119,7 @@ public class MeshGeneration : MonoBehaviour
 
     private void OnMouseButtonHold(Vector3 mousePosition, Camera camera)
     {
-        if (menuHandler.paused)
+        if (menuHandler.paused || menuHandler.startPanelOn)
         {
             return;
         }
