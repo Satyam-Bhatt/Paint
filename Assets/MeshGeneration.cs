@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class MeshGeneration : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MeshGeneration : MonoBehaviour
     [SerializeField] private Material greenMaterial;
     [SerializeField] private Material blackMaterial;
     [SerializeField] private Material brownMaterial;
+    [SerializeField] private TMP_Text brushColor;
 
     private Menu_Handler menuHandler;
 
@@ -199,24 +201,32 @@ public class MeshGeneration : MonoBehaviour
     {
         materialAssign = new Material(materialAssign);
         materialAssign.color = Color.red;
+        brushColor.SetText("Red");
+        brushColor.color = Color.red;
     }
 
     public void GreenPressed()
     {
         materialAssign = new Material(materialAssign);
         materialAssign.color = Color.green;
+        brushColor.SetText("Green");
+        brushColor.color = new Color32(56, 161, 51, 255);
     }
 
     public void BlackPressed()
     {
         materialAssign = new Material(materialAssign);
         materialAssign.color = Color.black;
+        brushColor.SetText("Black");
+        brushColor.color = Color.black;
     }
 
     public void BrownPressed()
     {
         materialAssign = new Material(materialAssign);
         materialAssign = brownMaterial;
+        brushColor.SetText("Brown");
+        brushColor.color = new Color32(133, 66, 19, 255);
     }
 
     public void LineThickness(float value)
