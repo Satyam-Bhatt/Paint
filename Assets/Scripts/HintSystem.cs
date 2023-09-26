@@ -6,19 +6,55 @@ using TMPro;
 
 public class HintSystem : MonoBehaviour
 {
+    [SerializeField] private string[] hintNumber;
     [TextArea(3,10)]
     [SerializeField] private string[] hints;
 
+    [SerializeField] private TMP_Text hintNumber_Text;
     [SerializeField] private TMP_Text text;
+
     private int hintCount = 0;
     // Start is called before the first frame update
-    
+
+    private void Start()
+    {
+        hintNumber_Text.text = hintNumber[0];
+        text.text = hints[0];
+    }
     public void NextHint()
     {
-        if(hints.Count() >= hintCount)
+        if(hints.Count() > hintCount)
         {
-            text.text = hints[hintCount];
-            hintCount++;
+            ++hintCount;
+            if(hints.Count() > hintCount)
+            {
+                hintNumber_Text.text = hintNumber[hintCount];
+                text.text = hints[hintCount];
+            }
+            else
+            {
+                hintCount = hints.Count() - 1;
+                GameObject.Find("Hint Container").SetActive(false);
+            }
+            
         }
+
+        Debug.Log("Next Hint: " + hintCount);
+    }
+
+    public void PreviousHint()
+    {
+        if(hintCount > 0)
+        {            
+            hintNumber_Text.text = hintNumber[hintCount - 1];
+            text.text = hints[hintCount - 1];
+            --hintCount;
+        }
+        else
+        {
+            hintCount = 0;
+        }
+        Debug.Log("Previous Hint: " + hintCount);
+
     }
 }

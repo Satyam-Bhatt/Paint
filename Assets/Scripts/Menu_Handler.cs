@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class Menu_Handler : MonoBehaviour
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject died;
     [SerializeField] private GameObject start_Panel;
+    [SerializeField] private GameObject hint_Panel;
 
     public bool paused = false;
 
@@ -17,10 +19,13 @@ public class Menu_Handler : MonoBehaviour
     [HideInInspector]
     public bool startPanelOn = true;
 
+    private bool open_Hint = false;
+
     private void Awake()
     {
         pause.SetActive(false);
         died.SetActive(false);
+        hint_Panel.SetActive(false);
     }
 
     private void Update()
@@ -69,5 +74,20 @@ public class Menu_Handler : MonoBehaviour
     {
         start_Panel.SetActive(false);
         startPanelOn = false;
+    }
+
+    public void HintPanelActivate()
+    {
+        if (open_Hint == false)
+        {
+            hint_Panel.SetActive(true);
+            open_Hint = true;
+        }
+        else
+        {
+            hint_Panel.SetActive(false);
+            open_Hint = false;
+        }
+        
     }
 }
