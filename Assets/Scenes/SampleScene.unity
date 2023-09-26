@@ -11293,9 +11293,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 857429950}
-        m_TargetAssemblyTypeName: HintSystem, Assembly-CSharp
-        m_MethodName: NextHint
+      - m_Target: {fileID: 247494724}
+        m_TargetAssemblyTypeName: Menu_Handler, Assembly-CSharp
+        m_MethodName: HintPanelActivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

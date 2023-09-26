@@ -34,7 +34,6 @@ public class HintSystem : MonoBehaviour
             else
             {
                 hintCount = hints.Count() - 1;
-                GameObject.Find("Hint Container").SetActive(false);
             }
             
         }
