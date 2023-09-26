@@ -12,6 +12,6 @@ public class Brown : MonoBehaviour
 
     private void Destroy()
     {
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }
