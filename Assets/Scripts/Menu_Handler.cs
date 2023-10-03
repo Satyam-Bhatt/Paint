@@ -20,6 +20,9 @@ public class Menu_Handler : MonoBehaviour
     public bool startPanelOn = true;
 
     private bool open_Hint = false;
+    private int clickNumber = 0;
+
+    [SerializeField]  private HintSystem hintSystem;
 
     private void Awake()
     {
@@ -82,6 +85,11 @@ public class Menu_Handler : MonoBehaviour
         {
             hint_Panel.SetActive(true);
             open_Hint = true;
+            clickNumber++;
+            if(clickNumber > 1)
+            {
+                hintSystem.NextHint();
+            }
         }
         else
         {

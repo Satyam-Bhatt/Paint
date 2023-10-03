@@ -37,8 +37,6 @@ public class HintSystem : MonoBehaviour
             }
             
         }
-
-        Debug.Log("Next Hint: " + hintCount);
     }
 
     public void PreviousHint()
@@ -53,7 +51,5 @@ public class HintSystem : MonoBehaviour
         {
             hintCount = 0;
         }
-        Debug.Log("Previous Hint: " + hintCount);
-
     }
 }
