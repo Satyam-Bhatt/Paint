@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using TMPro;
 
 public class LifeActivator : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class LifeActivator : MonoBehaviour
     [SerializeField] private GameObject snakeToRope_Color;
     [SerializeField] private GameObject house_Color;
 
+    [SerializeField] private TMP_Text road;
+    [SerializeField] private TMP_Text bridge_1;
+    [SerializeField] private TMP_Text bridge_2;
+    [SerializeField] private TMP_Text road2;
+    [SerializeField] private TMP_Text road3;
+
     [Header("Paint Strokes")]
     [SerializeField] private GameObject parent;
 
@@ -62,6 +69,13 @@ public class LifeActivator : MonoBehaviour
         snakeColor.SetActive(false);
         snakeToRope_Color.SetActive(false);
         house_Color.SetActive(false);
+
+        road.enabled = true;
+        bridge_1.enabled = true;
+        bridge_2.enabled = true;
+        road2.enabled = true;
+        road3.enabled = true;
+
     }
 
     // Update is called once per frame
@@ -71,6 +85,7 @@ public class LifeActivator : MonoBehaviour
         {
             mainPathColorHalf.SetActive(true);
             Destroy(GameObject.Find("MainRoad"));
+            road.enabled = false;
             blackCounter = 40;
 
             DestroyMeshes();
@@ -89,6 +104,8 @@ public class LifeActivator : MonoBehaviour
         {
             mainPathColor_Full.SetActive(true);
             Destroy(GameObject.Find("ExceptRoad"));
+            bridge_1.enabled = false;
+            bridge_2.enabled = false;
             brownCounter = 40;
 
             DestroyMeshes();
@@ -98,6 +115,7 @@ public class LifeActivator : MonoBehaviour
         {
             pathColor_Left.SetActive(true);
             Destroy(GameObject.Find("Path_Left"));
+            road2.enabled = false;
             blackCounter_Left = 40;
 
             DestroyMeshes();
@@ -107,6 +125,7 @@ public class LifeActivator : MonoBehaviour
         {
             pathColor_Right.SetActive(true);
             Destroy(GameObject.Find("Path_Right"));
+            road3.enabled = false;
             blackCounter_Right = 40;
 
             DestroyMeshes();

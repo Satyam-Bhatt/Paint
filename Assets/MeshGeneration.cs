@@ -4,7 +4,7 @@ using TMPro;
 
 public class MeshGeneration : MonoBehaviour
 {
-    [SerializeField] private float lineThickness = 1f;
+    [SerializeField] private float lineThickness = 3f;
     [SerializeField] private float polyDistance = 0.4f;
 
     private Mesh mesh;
@@ -31,6 +31,7 @@ public class MeshGeneration : MonoBehaviour
     {
         materialAssign = blackMaterial;
         blackMaterial.color = Color.black;
+        lineThickness = 3f;
     }
 
     void Update()
